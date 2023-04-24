@@ -7,12 +7,18 @@
 num = int(input())
 
 aList = list(map(int, input().split()))
+
 sortList = sorted(aList)
 resultList = []
 startPoint = 0
 
 for i in range(0, num):
-    resultList.append(sortList.index(aList[i]))
+    if(sortList.count(aList[i]) > 1):
+        resultList.append(sortList.index(aList[i]))
+        sortList[sortList.index(aList[i])] = -1
+    else:
+        resultList.append(sortList.index(aList[i]))
 
 
-print(resultList)
+for i in range(0, num):
+    print(resultList[i], end=" ")
