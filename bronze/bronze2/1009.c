@@ -1,20 +1,20 @@
 #include <stdio.h>
 int main()
 {
-    int testcase;
-    scanf("%d", &testcase);
-    for (int i = 0; i < testcase; i++)
+    int n;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
     {
         int a, b;
         scanf("%d %d", &a, &b);
-        int task = a;
+        int num = a;
         for (int j = 1; j < b; j++)
         {
-            task = task * a % 10;
+            num = num * a % 10;
         }
-        if (task % 10 == 0)
+        if (num % 10 == 0)
             printf("%d\n", 10);
         else
-            printf("%d\n", task % 10);
+            printf("%d\n", num % 10);
     }
 }
